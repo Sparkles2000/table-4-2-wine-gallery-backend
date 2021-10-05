@@ -4,8 +4,7 @@ class CreateBrandofwines < ActiveRecord::Migration[6.1]
       t.string :brand
       t.integer :age
       t.string :winetype
-      t.decimal5 :price
-      t.decimal2 :price
+      t.string :price
       t.string :drysweet
       t.string :alcoholcontent
       t.string :img_src
