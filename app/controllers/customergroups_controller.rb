@@ -1,0 +1,2 @@
+class CustomergroupsController < ApplicationController
+end
