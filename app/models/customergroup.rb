@@ -1,6 +1,6 @@
 class Customergroup < ApplicationRecord
     def index
-        brandofwines = Brandofwine.all
-        render json:  brandofwines
+        customergroups = Customergroup.all
+        render json:  customergroups
     end
 end
