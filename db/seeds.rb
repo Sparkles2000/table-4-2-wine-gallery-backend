@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-c1 = Customergroup.create!(party: 'Hendersons', partyquantity: 2, customerstatus: 'Preferred')
+c1 = Customergroup.create!(party: 'Henderson', partyquantity: 2, customerstatus: 'Preferred')
 c2 = Customergroup.create!(party: 'Parkers and McMillens', partyquantity: 4, customerstatus: 'General')
 c3 = Customergroup.create!(party: 'Jessica, Jack, and Susan', partyquantity: 3, customerstatus: 'General')
 c4 = Customergroup.create!(party: 'Denzel Ellison', partyquantity: 1, customerstatus: 'Preferred')
 c5 = Customergroup.create!(party: 'Dan Jacobs and Janice Thomson', partyquantity: 2, customerstatus: 'Diamond VIP')
-c6 = Customergroup.create!(party: 'Wensingtons', partyquantity: 2, customerstatus: 'Elite Diamond VIP')
+c6 = Customergroup.create!(party: 'Wensington', partyquantity: 2, customerstatus: 'Elite Diamond VIP')
 c7 = Customergroup.create!(party: 'The Arlington Family', partyquantity: 5, customerstatus: 'General')
 
 b1 = Brandofwine.create!(brand: 'barefoot', age: 2021, winetype: 'Pinot Grigio', price: '$5.99', drysweet: 'Semi-Sweet', alcoholcontent: '12.5%', img_src: 'barefoot.jpg')
@@ -40,3 +40,14 @@ b22 = Brandofwine.create!(brand: 'Sun Goddess', age: 2019, winetype: 'Sauvignon 
 b23 = Brandofwine.create!(brand: 'Usual', age: 2019, winetype: 'Red Blend', price: '$8', drysweet: 'Sweet', alcoholcontent: '14%', img_src: 'usual.jpg')
 b24 = Brandofwine.create!(brand: 'Usual', age: 2021, winetype: 'Brut', price: '$8', drysweet: 'Dry', alcoholcontent: '12%', img_src: 'usual.jpg')
 b25 = Brandofwine.create!(brand: 'Usual', age: 2020, winetype: 'Moscato Rose', price: '$8', drysweet: 'Semi-Sweet', alcoholcontent: '13.5%', img_src: 'usual.jpg')
+
+a1 = Artsession.create!(artstyle: 'Graffiti', price: '$15', sessiontype: 'Together As One', piecespergroup: 1, customergroup_id: c1.id)
+a2 = Artsession.create!(artstyle: 'Block', price: '$35', sessiontype: 'Double Duo', piecespergroup: 4, customergroup_id: c2.id)
+a3 = Artsession.create!(artstyle: 'Mixed Styles', price: '$25', sessiontype: 'Trio Tribe', piecespergroup: 3, customergroup_id: c3.id)
+a4 = Artsession.create!(artstyle: 'Mixed Styles', price: '$15', sessiontype: 'Together As One', piecespergroup: 1, customergroup_id: c1.id)
+a5 = Artsession.create!(artstyle: 'Panting', price: '$10', sessiontype: 'Simply Me', piecespergroup: 1, customergroup_id: c4.id)
+a6 = Artsession.create!(artstyle: 'Mixed Styles', price: '$20', sessiontype: "Lover's Duo", piecespergroup: 2, customergroup_id: c5.id)
+a7 = Artsession.create!(artstyle: 'Sketch', price: '$20', sessiontype: 'Lovers Duo', piecespergroup: 2, customergroup_id: c6.id)
+a8 = Artsession.create!(artstyle: 'Pastel', price: '$15', sessiontype: 'Together As One', piecespergroup: 1, customergroup_id: c5.id)
+a9 = Artsession.create!(artstyle: 'Charcoal', price: '$40', sessiontype: 'Five High', piecespergroup: 5, customergroup_id: c7.id)
+a10 = Artsession.create!(artstyle: 'Painting', price: '$30', sessiontype: 'Double Team', piecespergroup: 2, customergroup_id: c2.id)
