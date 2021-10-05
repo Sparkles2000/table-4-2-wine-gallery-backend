@@ -1,0 +1,2 @@
+class BrandofwinesController < ApplicationController
+end

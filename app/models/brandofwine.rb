@@ -1,0 +1,2 @@
+class Brandofwine < ApplicationRecord
+end
