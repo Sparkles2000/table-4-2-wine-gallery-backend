@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_133339) do
+ActiveRecord::Schema.define(version: 2021_10_06_015036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artpieces", force: :cascade do |t|
+    t.string "artists"
+    t.string "piece"
+    t.string "artstyle"
+    t.string "img_src"
+    t.bigint "artsession_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artsession_id"], name: "index_artpieces_on_artsession_id"
+  end
 
   create_table "artsessions", force: :cascade do |t|
     t.string "artstyle"
@@ -46,5 +57,6 @@ ActiveRecord::Schema.define(version: 2021_10_05_133339) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "artpieces", "artsessions"
   add_foreign_key "artsessions", "customergroups"
 end
