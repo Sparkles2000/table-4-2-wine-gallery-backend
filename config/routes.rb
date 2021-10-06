@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :artpieces
   resources :artsessions
   resources :brandofwines
   resources :customergroups
