@@ -5,7 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Customergroup.destroy_all
+Brandofwine.destroy_all
+Artsession.destroy_all
+Artpiece.destroy_all
+Winepurchase.destroy_all
 
+puts "Seeding Customergroup"
 
 c1 = Customergroup.create!(party: 'Hendersons', partyquantity: 2, customerstatus: 'Preferred')
 c2 = Customergroup.create!(party: 'Parkers and McMillens', partyquantity: 4, customerstatus: 'General')
@@ -14,6 +20,8 @@ c4 = Customergroup.create!(party: 'Denzel Arlington', partyquantity: 1, customer
 c5 = Customergroup.create!(party: 'Dan Jacobs and Janice Thomson', partyquantity: 2, customerstatus: 'Diamond VIP')
 c6 = Customergroup.create!(party: 'Wensingtons', partyquantity: 2, customerstatus: 'Diamond Elite VIP')
 c7 = Customergroup.create!(party: 'The Ellison Family', partyquantity: 5, customerstatus: 'General')
+
+puts "Seeding Brandofwine"
 
 b1 = Brandofwine.create!(brand: 'barefoot', age: 2021, winetype: 'Pinot Grigio', price: '$5.99', drysweet: 'Semi-Sweet', alcoholcontent: '12.5%', img_src: 'barefoot.jpg')
 b2 = Brandofwine.create!(brand: 'barefoot', age: 2021, winetype: 'White Zinfindel', price: '$5.99', drysweet: 'Sweet', alcoholcontent: '9%', img_src: 'barefoot.jpg')
@@ -41,6 +49,8 @@ b23 = Brandofwine.create!(brand: 'Usual', age: 2019, winetype: 'Red Blend', pric
 b24 = Brandofwine.create!(brand: 'Usual', age: 2021, winetype: 'Brut', price: '$8', drysweet: 'Dry', alcoholcontent: '12%', img_src: 'usual.jpg')
 b25 = Brandofwine.create!(brand: 'Usual', age: 2020, winetype: 'Moscato Rose', price: '$8', drysweet: 'Semi-Sweet', alcoholcontent: '13.5%', img_src: 'usual.jpg')
 
+puts "Seeding Artsession"
+
 a1 = Artsession.create!(artstyle: 'Graffiti', price: '$15', sessiontype: 'Together As One', piecespergroup: 1, customergroup_id: c1.id)
 a2 = Artsession.create!(artstyle: 'Block', price: '$35', sessiontype: 'Double Duo', piecespergroup: 4, customergroup_id: c2.id)
 a3 = Artsession.create!(artstyle: 'Mixed Styles', price: '$25', sessiontype: 'Trio Tribe', piecespergroup: 3, customergroup_id: c3.id)
@@ -51,6 +61,8 @@ a7 = Artsession.create!(artstyle: 'Sketch', price: '$15', sessiontype: 'Together
 a8 = Artsession.create!(artstyle: 'Pastel', price: '$15', sessiontype: 'Together As One', piecespergroup: 1, customergroup_id: c5.id)
 a9 = Artsession.create!(artstyle: 'Mixed Styles', price: '$40', sessiontype: 'Five High', piecespergroup: 5, customergroup_id: c7.id)
 a10 = Artsession.create!(artstyle: 'Painting', price: '$25', sessiontype: 'Double Team', piecespergroup: 2, customergroup_id: c2.id)
+
+puts "Seeding Artpiece"
 
 p1 = Artpiece.create!(artists: 'Jake and Anita Henderson', piece: 'Trapped in art', artstyle: 'Graffiti Art', img_src: 'naomi-tamar-trapped-in-art-unsplash.jpg', artsession_id: a1.id)
 p2 = Artpiece.create!(artists: 'Susan Parker', piece: 'Abstract', artstyle: 'Block', img_src: 'steve-johnson-abstract-painting-unsplash.jpg', artsession_id: a2.id)
@@ -74,6 +86,8 @@ p19 = Artpiece.create!(artists: 'Robert Ellington', piece: 'Breakfast', artstyle
 p20 = Artpiece.create!(artists: 'Jennifer Ellington', piece: 'Peaceful Mountain Sky', artstyle: 'Water Coloring', img_src: 'samuel-ferrara-peaceful-mountain-sky-unsplash.jpg', artsession_id: a9.id)
 p21 = Artpiece.create!(artists: 'Susan and Allen Parker', piece: 'Wooded Landscape', artstyle: 'Painting', img_src: 'europeana-wooded-landscape-unsplash.jpg', artsession_id: a10.id)
 p22 = Artpiece.create!(artists: 'Heather and James McMillen', piece: 'Paint Me All Over', artstyle: 'Painting', img_src: 'mike-von-artwork-by-tristan-eaton-unsplash.jpg', artsession_id: a10.id)
+
+puts "Seeding Winepurchase"
 
 w1 = Winepurchase.create!(purchasepackage: 'Preferred Premium', ordered: "Any session, two wines $20 and below, two hors d'oeuvres.", customergroup_id: c1.id, brandofwine_id: b7.id)
 w2 = Winepurchase.create!(purchasepackage: 'Preferred Premium', ordered: "Any session, two wines $20 and below, two hors d'oeuvres.", customergroup_id: c1.id, brandofwine_id: b8.id)
@@ -103,3 +117,6 @@ w26 = Winepurchase.create!(purchasepackage: 'Five High Premium', ordered: "Five 
 w27 = Winepurchase.create!(purchasepackage: 'Double Team Premium', ordered: "Double Team Session, three wines $15 and below, three hors d'oeuvres.", customergroup_id: c2.id, brandofwine_id: b19.id)
 w28 = Winepurchase.create!(purchasepackage: 'Double Team Premium', ordered: "Double Team Session, three wines $15 and below, three hors d'oeuvres.", customergroup_id: c2.id, brandofwine_id: b20.id)
 w29 = Winepurchase.create!(purchasepackage: 'Double Team Premium', ordered: "Double Team Session, three wines $15 and below, three hors d'oeuvres.", customergroup_id: c2.id, brandofwine_id: b25.id)
+
+puts "Customergroup, Brandofwine, Artsession, Artpieces, Winepurchases & Et all seeded"
+puts "Seeded"
