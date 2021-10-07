@@ -1,6 +1,7 @@
 class BrandofwinesController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+
     def index
         brandofwines = Brandofwine.all
         render json:  brandofwines
@@ -32,7 +33,7 @@ class BrandofwinesController < ApplicationController
     private
 
     def render_not_found_response
-        render json: { error: "User not found" }, status: :not_found
+        render json: { error: "Brand of wine not found" }, status: :not_found
       end
     
       def render_unprocessable_entity_response(invalid)
@@ -40,6 +41,6 @@ class BrandofwinesController < ApplicationController
       end
 
       defbrandofwine_params
-        params.permit(:brandofwine_id, :brand, :age, :winetype, :price, :drysweet, :alcoholcontent, :img_src)
+        params.permit(:brand, :age, :winetype, :price, :drysweet, :alcoholcontent, :img_src)
       end
 end

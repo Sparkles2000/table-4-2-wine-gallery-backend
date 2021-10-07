@@ -9,13 +9,13 @@ class CustomergroupsController < ApplicationController
 
     def show
         customergroup = Customergroup.find_by(id: params[:id])
-        render json: customergroups
+        render json: customergroup
     
     end
 
     def create
-      customergroups = Customergroup.create!(customergroups_params)
-      render json: customergroups, status: :created
+      customergroup = Customergroup.create!(customergroups_params)
+      render json: customergroup, status: :created
     end
 
     def update
@@ -25,15 +25,15 @@ class CustomergroupsController < ApplicationController
     end
 
    def destroy
-    customergroups = Customergroup.find_by(id: params[:id])
-    customergroups.destroy
+    customergroup = Customergroup.find_by(id: params[:id])
+    customergroup.destroy
     head :no_content
   end
 
     private
 
     def render_not_found_response
-        render json: { error: "User not found" }, status: :not_found
+        render json: { error: "Customer group not found" }, status: :not_found
       end
     
       def render_unprocessable_entity_response(invalid)
@@ -41,6 +41,6 @@ class CustomergroupsController < ApplicationController
       end
 
       def customergroups_params
-        params.permit(:customergroup_id, :party, :partyquantity, :customerstatus)
+        params.permit(:party, :partyquantity, :customerstatus, :winepurchase, :artsession, :artpiece)
       end
 end
