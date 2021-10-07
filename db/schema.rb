@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_06_015036) do
+ActiveRecord::Schema.define(version: 2021_10_06_041545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,19 @@ ActiveRecord::Schema.define(version: 2021_10_06_015036) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "winepurchases", force: :cascade do |t|
+    t.string "purchasepackage"
+    t.string "ordered"
+    t.bigint "customergroup_id", null: false
+    t.bigint "brandofwine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["brandofwine_id"], name: "index_winepurchases_on_brandofwine_id"
+    t.index ["customergroup_id"], name: "index_winepurchases_on_customergroup_id"
+  end
+
   add_foreign_key "artpieces", "artsessions"
   add_foreign_key "artsessions", "customergroups"
+  add_foreign_key "winepurchases", "brandofwines"
+  add_foreign_key "winepurchases", "customergroups"
 end
