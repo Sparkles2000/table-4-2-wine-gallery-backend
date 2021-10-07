@@ -25,15 +25,15 @@ class ArtpiecesController < ApplicationController
 
     private
 
-    def render_not_found_response
-        render json: { error: "Art piece not found" }, status: :not_found
-      end
+        def render_not_found_response
+            render json: { error: "Art piece not found" }, status: :not_found
+        end
     
-      def render_unprocessable_entity_response(invalid)
-        render json: { errors: invalid.record.errors }, status: :unprocessable_entity
-      end
+        def render_unprocessable_entity_response(invalid)
+            render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+        end
 
-    def artpiece_params
-        params.permit(:customergroup, :artists, :piece, :artstyle, :img_src, :artsession_id,)
-      end
+        def artpiece_params
+            params.permit(:customergroup, :artists, :piece, :artstyle, :img_src, :artsession_id,)
+        end
 end

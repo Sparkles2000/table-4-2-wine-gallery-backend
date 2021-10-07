@@ -32,7 +32,7 @@ class CustomergroupsController < ApplicationController
 
     private
 
-    def render_not_found_response
+      def render_not_found_response
         render json: { error: "Customer group not found" }, status: :not_found
       end
     

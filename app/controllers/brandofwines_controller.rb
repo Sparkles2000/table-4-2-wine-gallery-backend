@@ -32,7 +32,7 @@ class BrandofwinesController < ApplicationController
 
     private
 
-    def render_not_found_response
+      def render_not_found_response
         render json: { error: "Brand of wine not found" }, status: :not_found
       end
     
@@ -40,7 +40,7 @@ class BrandofwinesController < ApplicationController
         render json: { errors: invalid.record.errors }, status: :unprocessable_entity
       end
 
-      defbrandofwine_params
+      def brandofwine_params
         params.permit(:brand, :age, :winetype, :price, :drysweet, :alcoholcontent, :img_src)
       end
 end

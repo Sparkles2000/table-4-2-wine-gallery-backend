@@ -32,15 +32,15 @@ class ArtsessionsController < ApplicationController
 
     private
 
-    def render_not_found_response
-        render json: { error: "Art session not found" }, status: :not_found
-      end
-    
-      def render_unprocessable_entity_response(invalid)
-        render json: { errors: invalid.record.errors }, status: :unprocessable_entity
-      end
+        def render_not_found_response
+            render json: { error: "Session not found" }, status: :not_found
+        end
 
-      def artsession_params
-        params.permit(:artstyle, :price, :sessiontype, :piecespergroup, :customergroup_id, :artpiece)
-      end
+        def render_unprocessable_entity_response(invalid)
+            render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+        end
+
+        def artsession_params
+            params.permit(:artstyle, :price, :sessiontype, :piecespergroup, :customergroup_id, :artpiece)
+        end
 end
