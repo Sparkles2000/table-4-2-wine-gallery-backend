@@ -1,4 +1,4 @@
 class Artsession < ApplicationRecord
   belongs_to :customergroup
-  has_many :artsessions, dependent: :destroy
+  has_many :artpieces, dependent: :destroy
 end
