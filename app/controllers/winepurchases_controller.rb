@@ -6,6 +6,13 @@ class WinepurchasesController < ApplicationController
         winepurchases = Winepurchase.all
         render json:  winepurchases
     end
+
+    def show
+        winepurchase = Winepurchase.find_by(id: params[:id])
+         render json:winepurchase
+     
+     end
+
     def create
         winepurchase = Winepurchase.create!(inepurchase_params)
         render json: winepurchase, status: :created

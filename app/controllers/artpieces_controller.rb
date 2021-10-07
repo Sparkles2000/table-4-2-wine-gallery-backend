@@ -6,6 +6,13 @@ class ArtpiecesController < ApplicationController
         artpieces = Artpiece.all
         render json:  artpieces
     end
+
+    def show
+        artpiece = Artpiece.find_by(id: params[:id])
+         render json:artpiece
+     
+     end
+
     def create
         artpiece = Artpiece.create!(artpiece_params)
         render json: artpiece, status: :created
