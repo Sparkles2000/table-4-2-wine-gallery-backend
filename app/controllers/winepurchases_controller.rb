@@ -14,7 +14,7 @@ class WinepurchasesController < ApplicationController
      end
 
     def create
-        winepurchase = Winepurchase.create!(inepurchase_params)
+        winepurchase = Winepurchase.create!(winepurchase_params)
         render json: winepurchase, status: :created
       end
 
